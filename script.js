@@ -47,8 +47,8 @@ const translations = {
       "product-1": "AI製品1",
       "product-2": "AI製品2",
       "contact-title": "お問い合わせ",
-      "contact-email": "メール: contact@adventureai.com",
-      "contact-address": "住所: 日本、東京、AIストリート123"
+      "contact-email": "メール: ryu.kato@adventureai.jp",
+      "contact-address": "住所: 東京都渋谷区桜丘町18−4 二宮ビル"
     }
   };
   
