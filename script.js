@@ -1,4 +1,3 @@
-// 定义多语言内容
 const translations = {
     en: {
       "nav-about": "About Us",
@@ -10,14 +9,6 @@ const translations = {
       "team-title": "Our Team",
       "team-member-1-name": "Kato Ryu",
       "team-member-1-role": "CMO & Representative Director",
-      "team-member-2-name": "Lian Duan",
-      "team-member-2-role": "CEO & Director",
-      "team-member-3-name": "Zhiqiang Yang",
-      "team-member-3-role": "PM & Founder",
-      "team-member-4-name": "Weibang Yin",
-      "team-member-4-role": "CTO & Director",
-      "team-member-5-name": "Xiangyu Mao",
-      "team-member-5-role": "COO",
       "products-title": "Our Products",
       "product-1": "AI Product 1",
       "product-2": "AI Product 2",
@@ -35,14 +26,6 @@ const translations = {
       "team-title": "私たちのチーム",
       "team-member-1-name": "加藤 瑠",
       "team-member-1-role": "CMO & 代表取締役",
-      "team-member-2-name": "段 煉",
-      "team-member-2-role": "CEO & 取締役",
-      "team-member-3-name": "楊 志強",
-      "team-member-3-role": "PM & 創設者",
-      "team-member-4-name": "尹 維邦",
-      "team-member-4-role": "CTO & 取締役",
-      "team-member-5-name": "毛 翔宇",
-      "team-member-5-role": "COO",
       "products-title": "私たちの製品",
       "product-1": "AI製品1",
       "product-2": "AI製品2",
@@ -52,7 +35,6 @@ const translations = {
     }
   };
   
-  // 切换语言函数
   function switchLanguage(lang) {
     document.querySelectorAll("[data-lang]").forEach((element) => {
       const key = element.getAttribute("data-lang");
@@ -60,7 +42,6 @@ const translations = {
     });
   }
   
-  // 绑定按钮事件
   document.getElementById("lang-en").addEventListener("click", () => switchLanguage("en"));
   document.getElementById("lang-jp").addEventListener("click", () => switchLanguage("jp"));
   
