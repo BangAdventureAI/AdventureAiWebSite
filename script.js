@@ -51,7 +51,7 @@ const translations = {
     "company-main-bank": "主要取引銀行: 住信SBIネット銀行", // Added
     "team-title": "代表",
     "team-member-1-name": "加藤 瑠",
-    "team-member-1-role": "CMO & 代表取締役", // Kept user's provided Japanese translation
+    "team-member-1-role": "CEO & 代表取締役", // Kept user's provided Japanese translation
     "products-title": "私たちの製品",
     "product-1": "AI製品1",
     "product-2": "AI製品2",
