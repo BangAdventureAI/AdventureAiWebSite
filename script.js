@@ -18,7 +18,7 @@ const translations = {
     "company-activity-consulting": "AI Consulting", // Added
     "company-activity-export": "Export Business Support", // Added
     "company-activity-overseas": "Overseas Business Support", // Added
-    "company-main-bank": "Main Bank: SBI Sumishin Net Bank", // Added
+    // "company-main-bank": "Main Bank: SBI Sumishin Net Bank", // Added
     "team-title": "Our Team",
     "team-member-1-name": "Kato Ryu",
     "team-member-1-role": "CEO & Founder", // Updated to match original HTML
@@ -48,7 +48,7 @@ const translations = {
     "company-activity-consulting": "AIコンサルティング", // Added
     "company-activity-export": "輸出業務支援", // Added
     "company-activity-overseas": "海外事業支援", // Added
-    "company-main-bank": "主要取引銀行: 住信SBIネット銀行", // Added
+    // "company-main-bank": "主要取引銀行: 住信SBIネット銀行", // Added
     "team-title": "代表",
     "team-member-1-name": "加藤 瑠",
     "team-member-1-role": "CEO & 代表取締役", // Kept user's provided Japanese translation
