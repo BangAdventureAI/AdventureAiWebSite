@@ -320,13 +320,31 @@ body {
   background-position: center;
 }
 
+.figma-aboutus-title,
+.figma-aboutus-team-title,
+.figma-aboutus-team-main,
+.figma-aboutus-en,
+.figma-company-profile-title,
+.figma-company-profile-en,
+.figma-company-philosophy-title,
+.figma-company-philosophy-main,
+.figma-company-philosophy-desc {
+  text-align: center !important;
+  width: 98% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+}
+
 .figma-aboutus-title {
   position: absolute;
   top: 18%;
   left: 50%;
   transform: translate(-50%, 20%);
   z-index: 2;
-  font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 4vw, 2rem);
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -335,8 +353,10 @@ body {
   font-family: 'SF Pro', 'Besley', Arial, sans-serif;
   line-height: 1.3;
   background: none;
-  width: 90%;
+  width: 95%;
   max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .figma-aboutus-team-title {
@@ -350,6 +370,9 @@ body {
   text-align: center;
   position: relative;
   z-index: 2;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .figma-aboutus-team-main {
@@ -361,6 +384,9 @@ body {
   text-align: center;
   position: relative;
   z-index: 2;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .figma-aboutus-en {
@@ -380,6 +406,8 @@ body {
   background: none;
   width: 90%;
   max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .figma-contact {
@@ -537,7 +565,7 @@ footer {
     margin-left: 0;
     width: 100%;
     align-items: flex-start;
-    display: none; /* 默认隐藏，通过JS控制显示 */
+    display: flex; /* 移动端默认显示导航 */
   }
 
   .figma-header-nav.show {
@@ -563,7 +591,7 @@ footer {
   }
 
   .nav-toggle {
-    display: block !important;
+    display: none !important; /* 移动端不需要汉堡菜单 */
   }
 
   .figma-hero-title {
@@ -587,9 +615,11 @@ footer {
 
   .figma-aboutus-title {
     font-size: clamp(1.2rem, 4vw, 2rem);
-    width: 90%;
-    left: 5%;
+    width: 95%;
+    left: 2.5%;
     top: 10%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .figma-aboutus-team {
