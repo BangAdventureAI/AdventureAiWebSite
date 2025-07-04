@@ -119,3 +119,128 @@ if (email) {
     }, 1500);
   });
 }
+
+// 响应式图片处理
+document.addEventListener('DOMContentLoaded', function() {
+    // 优化图片加载
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease-in-out';
+    });
+
+    // 处理背景图片的响应式加载
+    const backgroundElements = document.querySelectorAll('[style*="background"]');
+    backgroundElements.forEach(element => {
+        const style = window.getComputedStyle(element);
+        const backgroundImage = style.backgroundImage;
+        if (backgroundImage && backgroundImage !== 'none') {
+            // 确保背景图片正确显示
+            element.style.backgroundSize = 'cover';
+            element.style.backgroundPosition = 'center';
+            element.style.backgroundRepeat = 'no-repeat';
+        }
+    });
+
+    // 平滑滚动
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 响应式导航菜单
+    const navToggle = document.createElement('button');
+    navToggle.className = 'nav-toggle';
+    navToggle.innerHTML = '☰';
+    navToggle.style.cssText = `
+        display: none;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.5rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+    `;
+
+    const header = document.querySelector('.figma-header');
+    if (header) {
+        header.appendChild(navToggle);
+
+        // 移动端菜单切换
+        navToggle.addEventListener('click', function() {
+            const nav = header.querySelector('.figma-header-nav');
+            if (nav) {
+                nav.classList.toggle('show');
+            }
+        });
+
+        // 响应式菜单显示
+        function handleResize() {
+            const nav = header.querySelector('.figma-header-nav');
+            if (window.innerWidth <= 900) {
+                navToggle.style.display = 'block';
+                nav.classList.remove('show');
+            } else {
+                navToggle.style.display = 'none';
+                nav.classList.add('show');
+            }
+        }
+
+        // 初始化和监听窗口大小变化
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    }
+
+    // 优化滚动性能
+    let ticking = false;
+    function updateOnScroll() {
+        // 这里可以添加滚动时的优化逻辑
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateOnScroll);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+});
+
+// 图片懒加载
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
