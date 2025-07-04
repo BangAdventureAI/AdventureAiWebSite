@@ -81,3 +81,41 @@ document.getElementById("lang-jp").addEventListener("click", () => switchLanguag
 // document.addEventListener('DOMContentLoaded', () => {
 //   switchLanguage('en');
 // });
+
+// 动态导航高亮
+const navLinks = document.querySelectorAll('.figma-header-nav nav ul li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// 语言切换
+const langJp = document.querySelector('.lang-jp');
+const langEn = document.querySelector('.lang-en');
+langJp.addEventListener('click', function () {
+  langJp.classList.add('active');
+  langEn.classList.remove('active');
+  // 这里可扩展：切换到日文内容
+});
+langEn.addEventListener('click', function () {
+  langEn.classList.add('active');
+  langJp.classList.remove('active');
+  // 这里可扩展：切换到英文内容
+});
+
+// 联系方式邮箱点击复制
+const email = document.querySelector('.figma-contact-email');
+if (email) {
+  email.style.cursor = 'pointer';
+  email.title = '点击复制邮箱';
+  email.addEventListener('click', function () {
+    const text = email.textContent.replace('Email: ', '').trim();
+    navigator.clipboard.writeText(text);
+    email.textContent = '已复制: ' + text;
+    setTimeout(() => {
+      email.textContent = 'Email: ' + text;
+    }, 1500);
+  });
+}

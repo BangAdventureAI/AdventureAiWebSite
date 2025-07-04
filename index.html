@@ -1,77 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdventureAI - Official Website</title>
+  <meta name="viewport" content="width=2880, initial-scale=1.0">
+  <title>AdventureAI株式会社</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <div class="logo-icon">A</div>
-      <h1>AdventureAI</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#about" data-lang="nav-about">About Us</a></li>
-        <li><a href="#company-profile" data-lang="nav-company-profile">Company Profile</a></li>
-        <li><a href="#team" data-lang="nav-team">Representative</a></li>
-        <li><a href="#products" data-lang="nav-products">Products</a></li>
-        <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
-        <li>
-          <button id="lang-en">English</button>
-          <button id="lang-jp">日本語</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div class="figma-header-wrapper">
+    <header class="figma-header">
+      <div class="figma-header-top">
+        <div class="figma-logo-block header-logo-block">
+          <img class="figma-logo-img" src="./figures/logo.png" alt="logo" />
+          <div class="figma-logo-texts">
+            <div class="figma-logo-sub">アドベンチャーエーアイ</div>
+            <div class="figma-logo-main">AdventureAI株式会社</div>
+            <div class="figma-logo-slogan">Exploring the Future with AI</div>
+          </div>
+        </div>
+        <div class="figma-header-nav">
+          <div class="figma-header-lang">
+            <!-- <span class="lang-jp active">日本語</span><span class="lang-en">English</span> -->
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#home">ホーム</a></li>
+              <li><a href="company.html">会社紹介</a></li>
+              <!-- <li><a href="#cases">事例紹介</a></li> -->
+              <li><a href="#about">私たちについて</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="figma-header-divider"></div>
+    </header>
+  </div>
 
-  <section id="about">
-    <h2 data-lang="about-title">About Us</h2>
-    <p data-lang="about-content">
-      AdventureAI is a cutting-edge company specializing in artificial intelligence solutions. Our mission is to make AI accessible and impactful for everyone.
-    </p>
-  </section>
-
-  <section id="company-profile">
-    <h2 data-lang="company-profile-title">Company Profile</h2>
-    <p data-lang="company-name"><strong>Company Name:</strong> AdventureAI Co., Ltd.</p>
-    <p data-lang="company-established"><strong>Established:</strong> May 20, 2025</p>
-    <p data-lang="company-capital"><strong>Capital:</strong> ¥1,000,000</p>
-    <p data-lang="company-representative"><strong>Representative:</strong> Ryu Kato, Representative Director</p>
-    <p data-lang="company-head-office"><strong>Head Office:</strong> 18-4 Sakuragaokacho, Shibuya-ku, Tokyo</p>
-    <div class="business-activities">
-        <h3 data-lang="company-business-activities-title">Business Activities:</h3>
-        <ul>
-            <li data-lang="company-activity-software">Software Development</li>
-            <li data-lang="company-activity-consulting">AI Consulting</li>
-            <li data-lang="company-activity-export">Export Business Support</li>
-            <li data-lang="company-activity-overseas">Overseas Business Support</li>
-        </ul>
-    </div>
-<!--     <p data-lang="company-main-bank"><strong>Main Bank:</strong> SBI Sumishin Net Bank</p> -->
-  </section>
-
-  <section id="team">
-    <h2 data-lang="team-title">Representative:</h2>
-    <div class="team-member">
-      <h3 data-lang="team-member-1-name">Kato Ryu</h3>
-      <p data-lang="team-member-1-role">CEO & Founder</p>
-    </div>
-  </section>
-
-
-  <section id="contact">
-    <h2 data-lang="contact-title">Contact Us</h2>
-    <p data-lang="contact-email">Email: ryu.kato@adventureai.jp</p>
-    <p data-lang="contact-address">Address: 18-4, Sakuragaokacho, Shibuya Ku, Tokyo To, 150-0031, Japan</p>
-  </section>
-
-  <footer>
-    <p>© 2025 AdventureAI. All rights reserved.</p>
-  </footer>
-
+  <main>
+    <section class="figma-hero" id="home">
+      <div class="figma-hero-bg"></div>
+      <div class="figma-hero-title">AIの力で未来を探求し、社会に新たな価値を創造する</div>
+      <div class="figma-hero-bottom-bar">
+        <div class="figma-hero-feature">
+          <div class="feature-title">AIシステム・ソフトウェア開発 <span class="feature-arrow"></span></div>
+          <div class="feature-lines">
+            <div class="feature-line-gray"></div>
+            <div class="feature-line-blue"></div>
+          </div>
+        </div>
+        <div class="figma-hero-feature">
+          <div class="feature-title">データ分析・業務 <span class="feature-arrow"></span></div>
+          <div class="feature-lines">
+            <div class="feature-line-gray"></div>
+            <div class="feature-line-blue"></div>
+          </div>
+        </div>
+        <div class="figma-hero-feature">
+          <div class="feature-title">技術連携・人材育成 <span class="feature-arrow"></span></div>
+          <div class="feature-lines">
+            <div class="feature-line-gray"></div>
+            <div class="feature-line-blue"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="figma-company-profile" id="company-profile">
+      <div class="figma-company-profile-bg"></div>
+      <div class="figma-company-profile-title">会社概要</div>
+      <div class="figma-company-profile-en">COMPANY PROFILE</div>
+      <div class="figma-company-philosophy-on-bg">
+        <div class="figma-company-philosophy-title">経営理念</div>
+        <div class="figma-company-philosophy-main">Challenge the Unknown, Create the Future</div>
+        <div class="figma-company-philosophy-desc">
+          AdventureAIは、顧客が本当に必要とする体験価値を起点に、既存の枠にとらわれないサービスを追求します<br>
+          最先端テクノロジー領域にも果敢に挑み、変化の激しい時代における最良のパートナーを目指します
+        </div>
+      </div>
+      <div class="figma-company-profile-desc">Figma</div>
+    </section>
+    <section class="figma-aboutus" id="about">
+      <div class="figma-aboutus-bg"></div>
+      <div class="figma-aboutus-title">私たちについて</div>
+      <div class="figma-aboutus-en">ABOUT US</div>
+      <div class="figma-aboutus-team-title">AIを専門とする若手の起業家チーム</div>
+      <div class="figma-aboutus-team-main">AI専門の研究室出身者や金融業界のデータサイエンティスト、<br>コンサルティングファーム出身者などで構成されています</div>
+      </div>
+    </section>
+    <section class="figma-contact" id="contact">
+      <div class="figma-contact-wrapper">
+        <div class="figma-contact-inner">
+          <div class="figma-logo-block footer-logo-block">
+            <img class="figma-logo-img" src="./figures/logo.png" alt="logo" />
+            <div class="footer-logo-info">
+              <div class="figma-logo-texts">
+                <div class="figma-logo-sub">アドベンチャーエーアイ</div>
+                <div class="figma-logo-main">AdventureAI株式会社</div>
+                <div class="figma-logo-slogan">Exploring the Future with AI</div>
+              </div>
+            </div>
+            <div class="footer-contact-block">
+              <div class="figma-contact-title">Contact Us</div>
+              <div class="figma-contact-email">Email: team@adventureai.jp</div>
+              <div class="figma-contact-address">〒150-0031 東京都渋谷区桜丘町18-4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="figma-contact-divider"></div>
+      <div class="figma-contact-copyright">© 2025 AdventureAI. All rights reserved.</div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
+
 </html>
