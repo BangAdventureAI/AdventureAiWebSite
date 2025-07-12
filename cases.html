@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventureAI株式会社 - 事業内容</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="figma-header">
+        <div class="figma-header-top">
+            <a href="index.html" id="logo-link">
+                <div class="figma-logo-block header-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="figma-logo-texts">
+                        <div class="figma-logo-sub">アドベンチャーエーアイ</div>
+                        <div class="figma-logo-main">AdventureAI株式会社</div>
+                        <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                    </div>
+                </div>
+            </a>
+            <div class="figma-header-nav">
+                <div class="figma-header-lang">
+                    <span class="lang-jp active">日本語</span><span class="lang-en">English</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="company.html">会社紹介</a></li>
+                        <li><a href="cases.html">事業内容</a></li>
+                        <li><a href="about.html">私たちについて</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="figma-header-divider"></div>
+    </header>
+    <main>
+        <section class="cases-hero" style="position:relative;">
+            <div class="cases-hero-banner">
+                <div class="cases-hero-title">事業内容<br>Services&Solutions</div>
+            </div>
+            <img class="cases-hero-img" src="./img/chip.png" alt="事業内容イメージ" />
+        </section>
+        <!-- 新增主要业务区块 -->
+        <section class="cases-services" id="services">
+            <div class="cases-services-inner">
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/shibuya.png" alt="AIソフトウェア開発">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">AIソフトウェア開発</div>
+                            <div class="cases-service-en">AI Software Development</div>
+                        </div>
+                        <div class="cases-service-desc">
+                            自社AIプロダクト・サービスの企画・開発・運用<br>最先端技術を活用し、<br>社会課題の解決や新たな価値創出を目指します
+                        </div>
+                    </div>
+                </div>
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/consulting.png" alt="AIコンサルティング">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">AIコンサルティング</div>
+                            <div class="cases-service-en">AI Consulting</div>
+                        </div>
+                        <div class="cases-service-desc">
+                            企業向けAI導入支援、課題分析、<br>最適なAIソリューションの提案・実装<br>豊富な実績でお客様のDXを加速します
+                        </div>
+                    </div>
+                </div>
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/map.png" alt="輸出・海外ビジネス支援">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">輸出・海外ビジネス支援</div>
+                            <div class="cases-service-en">Export & Global Business Support</div>
+                        </div>
+                        <div class="cases-service-desc">
+                            AI搭載サーバー等の海外輸出、現地展開支援<br>グローバル市場でのビジネス拡大を<br>トータルサポートします
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="figma-contact" id="contact">
+        <div class="figma-contact-wrapper">
+            <div class="figma-contact-inner">
+                <div class="figma-logo-block footer-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="footer-logo-info">
+                        <div class="figma-logo-texts">
+                            <div class="figma-logo-sub">アドベンチャーエーアイ</div>
+                            <div class="figma-logo-main">AdventureAI株式会社</div>
+                            <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-contact-block">
+                    <div class="figma-contact-title">Contact Us</div>
+                    <div class="figma-contact-email">Email: team@adventureai.jp</div>
+                    <div class="figma-contact-address">〒150-0031 東京都渋谷区桜丘町18-4</div>
+                </div>
+            </div>
+        </div>
+        <div class="figma-contact-divider"></div>
+        <div class="figma-contact-copyright">© 2025 AdventureAI. All rights reserved.</div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langJP = document.querySelector('.lang-jp');
+            const langEN = document.querySelector('.lang-en');
+            const path = window.location.pathname;
+            const filename = path.substring(path.lastIndexOf('/') + 1);
+            if (langEN) {
+                langEN.addEventListener('click', function () {
+                    if (!filename.includes('_en.html')) {
+                        const enPage = filename.replace('.html', '_en.html');
+                        window.location.href = enPage;
+                    }
+                });
+            }
+            if (langJP) {
+                langJP.addEventListener('click', function () {
+                    if (filename.includes('_en.html')) {
+                        const jpPage = filename.replace('_en.html', '.html');
+                        window.location.href = jpPage;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

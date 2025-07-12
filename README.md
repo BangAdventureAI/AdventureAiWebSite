@@ -41,7 +41,7 @@ AdventureAiWebSite/
 ├── company.html        # Company introduction page
 ├── style.css           # Stylesheet
 ├── script.js           # JavaScript functionality
-├── figures/            # Image resources
+├── img/                # Image resources
 │   ├── logo.png
 │   ├── city.png
 │   ├── people.jpg

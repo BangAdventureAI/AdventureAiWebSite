@@ -92,18 +92,18 @@ navLinks.forEach(link => {
 });
 
 // 语言切换
-const langJp = document.querySelector('.lang-jp');
-const langEn = document.querySelector('.lang-en');
-langJp.addEventListener('click', function () {
-  langJp.classList.add('active');
-  langEn.classList.remove('active');
-  // 这里可扩展：切换到日文内容
-});
-langEn.addEventListener('click', function () {
-  langEn.classList.add('active');
-  langJp.classList.remove('active');
-  // 这里可扩展：切换到英文内容
-});
+// const langJp = document.querySelector('.lang-jp');
+// const langEn = document.querySelector('.lang-en');
+// langJp.addEventListener('click', function () {
+//   langJp.classList.add('active');
+//   langEn.classList.remove('active');
+//   // 这里可扩展：切换到日文内容
+// });
+// langEn.addEventListener('click', function () {
+//   langEn.classList.add('active');
+//   langJp.classList.remove('active');
+//   // 这里可扩展：切换到英文内容
+// });
 
 // 联系方式邮箱点击复制
 const email = document.querySelector('.figma-contact-email');
@@ -121,51 +121,51 @@ if (email) {
 }
 
 // 响应式图片处理
-document.addEventListener('DOMContentLoaded', function() {
-    // 优化图片加载
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
+document.addEventListener('DOMContentLoaded', function () {
+  // 优化图片加载
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    img.addEventListener('load', function () {
+      this.style.opacity = '1';
+    });
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease-in-out';
+  });
+
+  // 处理背景图片的响应式加载
+  const backgroundElements = document.querySelectorAll('[style*="background"]');
+  backgroundElements.forEach(element => {
+    const style = window.getComputedStyle(element);
+    const backgroundImage = style.backgroundImage;
+    if (backgroundImage && backgroundImage !== 'none') {
+      // 确保背景图片正确显示
+      element.style.backgroundSize = 'cover';
+      element.style.backgroundPosition = 'center';
+      element.style.backgroundRepeat = 'no-repeat';
+    }
+  });
+
+  // 平滑滚动
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease-in-out';
+      }
     });
+  });
 
-    // 处理背景图片的响应式加载
-    const backgroundElements = document.querySelectorAll('[style*="background"]');
-    backgroundElements.forEach(element => {
-        const style = window.getComputedStyle(element);
-        const backgroundImage = style.backgroundImage;
-        if (backgroundImage && backgroundImage !== 'none') {
-            // 确保背景图片正确显示
-            element.style.backgroundSize = 'cover';
-            element.style.backgroundPosition = 'center';
-            element.style.backgroundRepeat = 'no-repeat';
-        }
-    });
-
-    // 平滑滚动
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // 响应式导航菜单
-    const navToggle = document.createElement('button');
-    navToggle.className = 'nav-toggle';
-    navToggle.innerHTML = '☰';
-    navToggle.style.cssText = `
+  // 响应式导航菜单
+  const navToggle = document.createElement('button');
+  navToggle.className = 'nav-toggle';
+  navToggle.innerHTML = '☰';
+  navToggle.style.cssText = `
         display: none;
         position: fixed;
         top: 1rem;
@@ -179,68 +179,76 @@ document.addEventListener('DOMContentLoaded', function() {
         font-size: 1.2rem;
     `;
 
-    const header = document.querySelector('.figma-header');
-    if (header) {
-        header.appendChild(navToggle);
+  const header = document.querySelector('.figma-header');
+  if (header) {
+    header.appendChild(navToggle);
 
-        // 移动端菜单切换
-        navToggle.addEventListener('click', function() {
-            const nav = header.querySelector('.figma-header-nav');
-            if (nav) {
-                nav.classList.toggle('show');
-            }
-        });
+    // 移动端菜单切换
+    navToggle.addEventListener('click', function () {
+      const nav = header.querySelector('.figma-header-nav');
+      if (nav) {
+        nav.classList.toggle('show');
+      }
+    });
 
-        // 响应式菜单显示
-        function handleResize() {
-            const nav = header.querySelector('.figma-header-nav');
-            if (window.innerWidth <= 900) {
-                navToggle.style.display = 'block';
-                nav.classList.remove('show');
-            } else {
-                navToggle.style.display = 'none';
-                nav.classList.add('show');
-            }
-        }
-
-        // 初始化和监听窗口大小变化
-        handleResize();
-        window.addEventListener('resize', handleResize);
+    // 响应式菜单显示
+    function handleResize() {
+      const nav = header.querySelector('.figma-header-nav');
+      if (window.innerWidth <= 900) {
+        navToggle.style.display = 'block';
+        nav.classList.remove('show');
+      } else {
+        navToggle.style.display = 'none';
+        nav.classList.add('show');
+      }
     }
 
-    // 优化滚动性能
-    let ticking = false;
-    function updateOnScroll() {
-        // 这里可以添加滚动时的优化逻辑
-        ticking = false;
-    }
+    // 初始化和监听窗口大小变化
+    handleResize();
+    window.addEventListener('resize', handleResize);
+  }
 
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateOnScroll);
-            ticking = true;
-        }
-    }
+  // 优化滚动性能
+  let ticking = false;
+  function updateOnScroll() {
+    // 这里可以添加滚动时的优化逻辑
+    ticking = false;
+  }
 
-    window.addEventListener('scroll', requestTick);
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateOnScroll);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick);
 });
 
 // 图片懒加载
 if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                }
-                observer.unobserve(img);
-            }
-        });
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        observer.unobserve(img);
+      }
     });
+  });
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var logoLink = document.getElementById('logo-link');
+  if (logoLink) {
+    var isEnglish = document.documentElement.lang === 'en';
+    logoLink.setAttribute('href', isEnglish ? 'index_en.html' : 'index.html');
+  }
+});

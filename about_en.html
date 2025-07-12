@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AdventureAI Inc.</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="figma-header">
+        <div class="figma-header-top">
+            <a href="index_en.html" id="logo-link">
+                <div class="figma-logo-block header-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="figma-logo-texts">
+                        <div class="figma-logo-sub">AdventureAI</div>
+                        <div class="figma-logo-main">AdventureAI Inc.</div>
+                        <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                    </div>
+                </div>
+            </a>
+            <div class="figma-header-nav">
+                <div class="figma-header-lang">
+                    <span class="lang-jp">日本語</span><span class="lang-en active">English</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index_en.html">Home</a></li>
+                        <li><a href="company_en.html">Company</a></li>
+                        <li><a href="cases_en.html">Services</a></li>
+                        <li><a href="about_en.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="figma-header-divider"></div>
+    </header>
+    <main>
+        <section class="figma-aboutus" id="about">
+            <div class="figma-aboutus-bg"></div>
+            <div class="figma-aboutus-bar">
+                <div class="figma-aboutus-content">
+                    <div class="figma-aboutus-title">About Us</div>
+                    <!-- <div class="figma-aboutus-en">ABOUT US</div> -->
+                    <div class="figma-aboutus-team-title">A Startup Team Specializing in AI</div>
+                    <div class="figma-aboutus-team-main">Our team consists of AI research lab graduates, data scientists
+                        from the financial industry, and consulting firm alumni</div>
+                </div>
+            </div>
+        </section>
+        <section class="about-team">
+            <div class="about-team-inner">
+                <div class="about-team-card">
+                    <img class="about-team-img" src="./img/road.png" alt="Development Team">
+                    <div class="about-team-content">
+                        <div class="about-team-titles">
+                            <div class="about-team-title">Development Team</div>
+                            <!-- <div class="about-team-en">Development Team</div> -->
+                        </div>
+                        <div class="about-team-desc">
+                            Centered on graduates from the University of Tokyo's AI research lab,<br>
+                            our team covers everything from AI algorithm research and development to product
+                            implementation.<br>
+                            Our elite team, equipped with cutting-edge knowledge and technical skills,<br>
+                            is engaged in the development of practical and innovative AI products.
+                        </div>
+                    </div>
+                </div>
+                <div class="about-team-card">
+                    <img class="about-team-img" src="./img/pc.png" alt="Consulting Team">
+                    <div class="about-team-content">
+                        <div class="about-team-titles">
+                            <div class="about-team-title">Consulting Team</div>
+                            <!-- <div class="about-team-en">Consulting Team</div> -->
+                        </div>
+                        <div class="about-team-desc">
+                            Centered on members from consulting firms,<br>
+                            we provide practical proposals that connect technology and business.<br>
+                            From strategic planning to on-site implementation support,<br>
+                            we aim to be a reliable partner supporting client transformation.
+                        </div>
+                    </div>
+                </div>
+                <div class="about-team-card">
+                    <img class="about-team-img" src="./img/clock.png" alt="Marketing Team">
+                    <div class="about-team-content">
+                        <div class="about-team-titles">
+                            <div class="about-team-title">Marketing Team</div>
+                            <!-- <div class="about-team-en">Marketing Team</div> -->
+                        </div>
+                        <div class="about-team-desc">
+                            Centered on data scientists from the financial industry,<br>
+                            we handle everything from market analysis to promotional strategy planning,<br>
+                            investor relations, and fundraising activities.<br>
+                            Our strategic and execution-oriented approach drives effective promotion.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="figma-contact" id="contact">
+        <div class="figma-contact-wrapper">
+            <div class="figma-contact-inner">
+                <div class="figma-logo-block footer-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="footer-logo-info">
+                        <div class="figma-logo-texts">
+                            <div class="figma-logo-sub">AdventureAI</div>
+                            <div class="figma-logo-main">AdventureAI Inc.</div>
+                            <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-contact-block">
+                    <div class="figma-contact-title">Contact Us</div>
+                    <div class="figma-contact-email">Email: team@adventureai.jp</div>
+                    <div class="figma-contact-address">〒150-0031 18-4 Sakuragaoka-cho, Shibuya-ku, Tokyo</div>
+                </div>
+            </div>
+        </div>
+        <div class="figma-contact-divider"></div>
+        <div class="figma-contact-copyright">© 2025 AdventureAI. All rights reserved.</div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langJP = document.querySelector('.lang-jp');
+            const langEN = document.querySelector('.lang-en');
+            const path = window.location.pathname;
+            const filename = path.substring(path.lastIndexOf('/') + 1);
+            if (langEN) {
+                langEN.addEventListener('click', function () {
+                    if (!filename.includes('_en.html')) {
+                        const enPage = filename.replace('.html', '_en.html');
+                        window.location.href = enPage;
+                    }
+                });
+            }
+            if (langJP) {
+                langJP.addEventListener('click', function () {
+                    if (filename.includes('_en.html')) {
+                        const jpPage = filename.replace('_en.html', '.html');
+                        window.location.href = jpPage;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

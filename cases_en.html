@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventureAI Inc. - Services</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="figma-header">
+        <div class="figma-header-top">
+            <a href="index_en.html" id="logo-link">
+                <div class="figma-logo-block header-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="figma-logo-texts">
+                        <div class="figma-logo-sub">AdventureAI</div>
+                        <div class="figma-logo-main">AdventureAI Inc.</div>
+                        <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                    </div>
+                </div>
+            </a>
+            <div class="figma-header-nav">
+                <div class="figma-header-lang">
+                    <span class="lang-jp">日本語</span><span class="lang-en active">English</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index_en.html">Home</a></li>
+                        <li><a href="company_en.html">Company</a></li>
+                        <li><a href="cases_en.html">Services</a></li>
+                        <li><a href="about_en.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="figma-header-divider"></div>
+    </header>
+    <main>
+        <section class="cases-hero" style="position:relative;">
+            <div class="cases-hero-banner">
+                <div class="cases-hero-title">Services & Solutions</div>
+            </div>
+            <img class="cases-hero-img" src="./img/chip.png" alt="Services Image" />
+        </section>
+        <!-- Main Business Section -->
+        <section class="cases-services" id="services">
+            <div class="cases-services-inner">
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/shibuya.png" alt="AI Software Development">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">AI Software Development</div>
+                            <!-- <div class="cases-service-en">AI Software Development</div> -->
+                        </div>
+                        <div class="cases-service-desc">
+                            Planning, development, and operation of our own AI products and services.<br>
+                            Utilizing cutting-edge technology,<br>
+                            we aim to solve social issues and create new value.
+                        </div>
+                    </div>
+                </div>
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/consulting.png" alt="AI Consulting">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">AI Consulting</div>
+                            <!-- <div class="cases-service-en">AI Consulting</div> -->
+                        </div>
+                        <div class="cases-service-desc">
+                            Support for corporate AI implementation, issue analysis,<br>
+                            proposal and implementation of optimal AI solutions.<br>
+                            With a wealth of experience, we accelerate your DX.
+                        </div>
+                    </div>
+                </div>
+                <div class="cases-service-card">
+                    <img class="cases-service-img" src="./img/map.png" alt="Export & Global Business Support">
+                    <div class="cases-service-content">
+                        <div class="cases-service-titles">
+                            <div class="cases-service-title">Export & Global Business Support</div>
+                            <!-- <div class="cases-service-en">Export & Global Business Support</div> -->
+                        </div>
+                        <div class="cases-service-desc">
+                            Overseas export of AI-equipped servers, local deployment support.<br>
+                            We provide total support for business expansion in the global market.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="figma-contact" id="contact">
+        <div class="figma-contact-wrapper">
+            <div class="figma-contact-inner">
+                <div class="figma-logo-block footer-logo-block">
+                    <img class="figma-logo-img" src="./img/logo.png" alt="logo" />
+                    <div class="footer-logo-info">
+                        <div class="figma-logo-texts">
+                            <div class="figma-logo-sub">AdventureAI</div>
+                            <div class="figma-logo-main">AdventureAI Inc.</div>
+                            <div class="figma-logo-slogan">Exploring the Future with AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-contact-block">
+                    <div class="figma-contact-title">Contact Us</div>
+                    <div class="figma-contact-email">Email: team@adventureai.jp</div>
+                    <div class="figma-contact-address">〒150-0031 18-4 Sakuragaoka-cho, Shibuya-ku, Tokyo</div>
+                </div>
+            </div>
+        </div>
+        <div class="figma-contact-divider"></div>
+        <div class="figma-contact-copyright">© 2025 AdventureAI. All rights reserved.</div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const langJP = document.querySelector('.lang-jp');
+            const langEN = document.querySelector('.lang-en');
+            const path = window.location.pathname;
+            const filename = path.substring(path.lastIndexOf('/') + 1);
+            if (langEN) {
+                langEN.addEventListener('click', function () {
+                    if (!filename.includes('_en.html')) {
+                        const enPage = filename.replace('.html', '_en.html');
+                        window.location.href = enPage;
+                    }
+                });
+            }
+            if (langJP) {
+                langJP.addEventListener('click', function () {
+                    if (filename.includes('_en.html')) {
+                        const jpPage = filename.replace('_en.html', '.html');
+                        window.location.href = jpPage;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
