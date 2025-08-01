@@ -9,6 +9,7 @@
   <link rel="shortcut icon" type="image/png" href="./img/logo.png">
   <link rel="apple-touch-icon" href="./img/logo.png">
   <link rel="stylesheet" href="style.css">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSYBVJ3787"></script>
   <script>
@@ -132,12 +133,12 @@
         </div>
       </div>
       <div class="figma-contact-divider"></div>
-      <div class="figma-contact-copyright">© 2025 AdventureAI. All rights reserved.</div>
+      <div class="figma-contact-copyright">© 2025 AdventureAI. All rights
+        reserved.<br>開発のご相談・お見積りなどはteam@adventureai.jp宛てにご連絡ください</div>
     </section>
   </main>
   <script src="script.js"></script>
   <script>
-    // 翻页动画切换figma-hero-bg背景图和标题内容
     (function () {
       var images = ['./img/city.png', './img/pedestrians.png'];
       var titles = [
@@ -161,7 +162,6 @@
         nextDiv.style.transition = 'none';
         nextDiv.style.transform = 'translateX(100%)';
         nextDiv.style.zIndex = 3;
-        // 延迟0.5秒后再切换标题内容
         setTimeout(function () {
           if ((idx + 1) % titles.length === 1) {
             title.innerHTML = '<span style="color:#fff">' + titles[1] + '</span>';
