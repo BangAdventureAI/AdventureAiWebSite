@@ -1,0 +1,1896 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html,
+body {
+    width: 100%;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Page layout styles */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.site-footer {
+    margin-top: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem;
+    background: #fff;
+}
+
+body {
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+/* Header样式已移动到Header.tsx组件中 */
+
+.figma-logo-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    min-width: 180px;
+    max-width: 660px;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.figma-logo-img {
+    max-height: 36px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.figma-logo-texts {
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: auto;
+    min-width: 120px;
+    max-width: 486px;
+}
+
+.figma-logo-sub {
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.figma-logo-main {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.figma-logo-slogan {
+    font-family: 'Besley', serif;
+    font-size: 0.7rem;
+    color: #34416e;
+    font-weight: bold;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    line-height: 1;
+    display: block;
+    white-space: normal;
+    text-align: left;
+}
+
+
+
+/* .figma-header-nav 样式已移动到Header.tsx组件中 */
+
+
+
+/* Header导航相关样式已移动到Header.tsx组件中 */
+
+/* 汉堡菜单样式已移动到Header.tsx组件中 */
+
+/* 移动端菜单覆盖层样式已移动到Header.tsx组件中 */
+
+/* 移动端菜单样式已移动到Header.tsx组件中 */
+
+/* 移动端导航样式已移动到Header.tsx组件中 */
+/* 移动端导航剩余样式已移动到Header.tsx组件中 */
+/* 剩余mobile-nav样式已移动到Header.tsx组件中 */
+
+
+
+
+
+/* 桌面端隐藏汉堡菜单样式已移动到Header.tsx组件中 */
+
+/* Hero区块样式 */
+.figma-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 599px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.figma-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.figma-hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.figma-hero-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.figma-hero-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    color: #1a237e;
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    text-align: center;
+    background: none;
+    width: 100%;
+    margin: 0;
+}
+
+.figma-hero-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.figma-hero-feature {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.figma-hero-feature:hover {
+    transform: translateY(-2px);
+}
+
+.feature-title {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.feature-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.2s;
+}
+
+.figma-hero-feature:hover .feature-arrow {
+    transform: translateX(4px);
+}
+
+.feature-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.feature-line-gray {
+    height: 2px;
+    background: #666;
+    width: 100%;
+}
+
+.feature-line-blue {
+    height: 2px;
+    background: #007AFF;
+    width: 60%;
+    transition: width 0.3s;
+}
+
+.figma-hero-feature:hover .feature-line-blue {
+    width: 100%;
+}
+
+/* 公司介绍区块样式 */
+.figma-company-profile {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12vh 0 0vh 0;
+    min-height: 60vh;
+    height: 85vh;
+}
+
+.figma-company-profile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background: url('/images/night.png') no-repeat center/cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.figma-company-profile-title {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 0;
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    line-height: 1.3;
+    background: none;
+    width: 90%;
+    max-width: 800px;
+}
+
+.figma-company-profile-en {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    color: #fff;
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    text-align: center;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    background: none;
+    width: 90%;
+    max-width: 800px;
+}
+
+.figma-company-profile-bottom-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+    transform: none;
+    max-width: none;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.figma-company-profile-philosophy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.figma-company-profile-philosophy-content {
+    position: static;
+    transform: none;
+    width: auto;
+    max-width: 100%;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem 3rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.figma-company-profile-philosophy-title {
+    font-size: clamp(0.8rem, 2.5vw, 2.5rem);
+    font-weight: bold;
+    color: #1a237e;
+    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+}
+
+.figma-company-profile-philosophy-main {
+    font-size: clamp(0.7rem, 2vw, 2rem);
+    font-weight: bold;
+    color: #34416e;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.figma-company-profile-philosophy-desc {
+    font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* 关于我们区块样式 */
+.figma-aboutus {
+    width: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    height: 110vh;
+    min-height: 400px;
+    max-height: 876px;
+    margin: 0 auto;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.figma-aboutus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url('/images/people.png') no-repeat center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.figma-aboutus-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    min-height: 200px;
+    background: rgba(26, 35, 126, 0.9);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figma-aboutus-content {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem 3rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.figma-aboutus-title {
+    font-size: clamp(1.2rem, 2.0vw, 2.0rem);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 0 0 1rem 0;
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    line-height: 1.3;
+    background: none;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.figma-aboutus-en {
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    color: #fff;
+    font-family: 'SF Pro', 'Besley', Arial, sans-serif;
+    text-align: center;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 2rem 0;
+    background: none;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.figma-aboutus-team-title {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.figma-aboutus-team-main {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #fff;
+    font-weight: bold;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.figma-contact-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.figma-contact-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+}
+
+.figma-contact-logo {
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: auto;
+    min-width: 120px;
+    max-width: 462px;
+    height: auto;
+}
+
+.figma-contact-logo img {
+    margin-right: 1rem;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.figma-contact-info {
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    min-width: 120px;
+    max-width: 486px;
+    height: auto;
+}
+
+.figma-contact-company {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: normal;
+}
+
+.figma-contact-address {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1em;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.figma-contact-title {
+    margin-top: 0;
+    margin-left: 0;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: bold;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: normal;
+}
+
+.figma-contact-email {
+    margin-top: 1rem;
+    margin-left: 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    border: 2px solid #9fb3db;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: 'SF Pro', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.figma-contact-divider {
+    width: 100%;
+    height: 1px;
+    background: #e0e4ef;
+    margin: 2rem 0;
+}
+
+.figma-contact-copyright {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Footer样式 */
+.footer-logo-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-top: 0;
+    min-width: 220px;
+    max-width: 100%;
+    width: auto;
+}
+
+.footer-logo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    min-width: 180px;
+    width: auto;
+}
+
+.footer-contact-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 0;
+    margin-top: 0;
+    max-width: 100%;
+    text-align: right;
+}
+
+.footer-contact-block .figma-contact-title,
+.footer-contact-block .figma-contact-email,
+.footer-contact-block .figma-contact-address {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.footer-contact-block .figma-contact-email {
+    border: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+/* 公司信息样式 */
+.figma-company-info-mcp {
+    width: 60%;
+    max-width: 1400px;
+    margin: 4rem auto 0 auto;
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    font-family: 'SF Pro', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.company-info-title-mcp {
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 2rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.company-info-table-mcp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.company-info-row-mcp {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #e0e4ef;
+    padding: 0.8rem 0;
+    align-items: flex-start;
+    background: none;
+    flex-wrap: wrap;
+}
+
+.company-info-row-bg-mcp {
+    border-radius: 8px;
+    border-bottom: 1px solid #e0e4ef;
+}
+
+.company-info-label-mcp {
+    width: 8em;
+    min-width: 120px;
+    font-weight: bold;
+    color: #34416e;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    letter-spacing: 0.08em;
+    line-height: 2.2;
+    text-align: left;
+}
+
+.company-info-value-mcp {
+    flex: 1;
+    color: #222;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    padding-left: 2rem;
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 2.2;
+    text-align: right;
+}
+
+
+
+/* 业务内容页面样式 */
+.cases-hero {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    min-height: 30vh;
+    height: 85vh;
+    background: none;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.cases-hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    min-height: 100px;
+    overflow: hidden;
+    z-index: 1;
+    background: #DEE1E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cases-hero-title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'SF Pro', 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+    color: #000;
+    line-height: 60px;
+    letter-spacing: 4.2px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cases-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.cases-services {
+    min-width: 320px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.cases-services-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+.cases-service-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(30, 40, 80, 0.07);
+    padding: 2.5rem 0;
+    width: 100%;
+    min-height: 220px;
+    margin-bottom: 0;
+    transition: box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.cases-service-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-left: 3vw;
+    margin-right: 6vw;
+    box-shadow: 0 2px 8px rgba(30, 40, 80, 0.10);
+    flex-shrink: 0;
+}
+
+.cases-service-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cases-service-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cases-service-desc {
+    flex: 1;
+    text-align: right;
+    align-self: flex-start;
+    margin-left: 0;
+    max-width: 100%;
+    min-width: 180px;
+    font-size: 1.05rem;
+    color: #222;
+    line-height: 1.8;
+    padding-right: 2vw;
+}
+
+.cases-service-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #1a237e;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+.cases-service-en {
+    font-size: 1.1rem;
+    color: #34416e;
+    margin-bottom: 1.2rem;
+    font-family: 'SF Pro', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+.cases-service-card:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+/* 关于我们页面样式 */
+.about-team {
+    min-width: 320px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.about-team-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+.about-team-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(30, 40, 80, 0.07);
+    padding: 2.5rem 0;
+    width: 100%;
+    min-height: 220px;
+    margin-bottom: 0;
+    transition: box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.about-team-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-left: 3vw;
+    margin-right: 6vw;
+    box-shadow: 0 2px 8px rgba(30, 40, 80, 0.10);
+    flex-shrink: 0;
+}
+
+.about-team-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.about-team-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-team-desc {
+    flex: 1;
+    text-align: right;
+    align-self: flex-start;
+    margin-left: 0;
+    max-width: 100%;
+    min-width: 180px;
+    font-size: 1.05rem;
+    color: #222;
+    line-height: 1.8;
+    padding-right: 2vw;
+}
+
+.about-team-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #1a237e;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+.about-team-en {
+    font-size: 1.1rem;
+    color: #34416e;
+    margin-bottom: 1.2rem;
+    font-family: 'SF Pro', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+/* 移除卡片间隔 */
+.about-team-card:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+/* 平板端Logo样式 (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .figma-logo-block {
+        min-width: 150px;
+        max-width: 200px;
+    }
+
+    .figma-logo-img {
+        max-height: 32px;
+    }
+
+    .figma-logo-main {
+        font-size: 0.8rem;
+    }
+
+    .figma-logo-sub {
+        font-size: 0.55rem;
+    }
+
+    .figma-logo-slogan {
+        font-size: 0.55rem;
+    }
+}
+
+
+/* ==================== Header基础样式 ==================== */
+
+/* Header主体样式 */
+.figma-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 10;
+}
+
+.figma-header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    min-width: 320px;
+    box-sizing: border-box;
+    min-height: 0;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.figma-header-nav {
+    margin: 0.2rem 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+    min-width: 200px;
+    max-width: 1216px;
+    position: relative;
+}
+
+.figma-header-nav nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'SF Pro', Arial, sans-serif;
+    font-weight: normal;
+    list-style: none;
+    padding: 0;
+    min-width: 200px;
+    max-width: 1200px;
+    position: relative;
+}
+
+.figma-header-nav nav ul li {
+    margin-right: 2rem;
+    line-height: 2.5rem;
+}
+
+.figma-header-nav nav ul li:last-child {
+    margin-right: 0;
+}
+
+.figma-header-nav nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: 'SF Pro', Arial, sans-serif;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    line-height: 1;
+}
+
+.figma-header-divider {
+    display: none;
+}
+
+/* 语言选择器样式 */
+.header-lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.header-lang-selector span {
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+    font-size: 1.0rem;
+    font-weight: 600;
+    font-family: 'SF Pro', Arial, sans-serif;
+    color: #666;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.header-lang-selector span.active {
+    color: #1a237e;
+    font-weight: 700;
+}
+
+.header-lang-selector span:hover:not(.active) {
+    color: #1a237e;
+    background: rgba(26, 35, 126, 0.05);
+}
+
+/* 汉堡菜单样式 */
+.mobile-hidden {
+    display: none !important;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.hamburger-menu:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+    margin: 2px 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* 移动端菜单覆盖层 */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 移动端菜单 */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-content {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* 移动端导航 */
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav ul li {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+.mobile-nav ul li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'SF Pro', Arial, sans-serif;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover {
+    color: #1a237e;
+}
+
+@media (max-width: 600px) {
+
+    /* Header phone */
+    .figma-header-top {
+        padding: 0.8rem 1rem;
+    }
+
+    .header-lang-selector {
+        position: absolute;
+        right: 60px;
+        margin-left: 0;
+        gap: 0.3rem;
+    }
+
+    .header-lang-selector span {
+        font-size: clamp(0.2rem, 2.5vw, 1.8rem);
+        padding: 0.2em 0.2em;
+    }
+
+    .figma-header-nav {
+        margin: 0;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .figma-header-nav nav ul {
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .figma-header-nav nav ul li {
+        margin: 0 0 1rem 0;
+    }
+
+    .figma-header-nav nav ul li a {
+        font-size: 1rem;
+    }
+
+    /* footer phone */
+    .site-footer {
+        padding: 2rem 1rem !important;
+        text-align: center !important;
+    }
+
+    .figma-contact-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        max-width: 100% !important;
+    }
+
+    .figma-contact-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .footer-contact-block .figma-contact-title,
+    .footer-contact-block .figma-contact-email,
+    .footer-contact-block .figma-contact-address {
+        text-align: center !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Divider居中 */
+    .figma-contact-divider {
+        width: 80% !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    /* Copyright居中 */
+    .figma-contact-copyright {
+        text-align: center !important;
+        margin: 1.5rem auto 0 !important;
+        max-width: 90% !important;
+        line-height: 1.6 !important;
+    }
+
+    .figma-hero-bottom-bar .feature-title {
+        font-size: 1.1rem !important;
+    }
+
+    .figma-logo-block {
+        min-width: 120px;
+        max-width: 140px;
+    }
+
+    .footer-logo-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .figma-logo-img {
+        max-height: 28px;
+    }
+
+    .figma-logo-main {
+        font-size: 0.65rem;
+    }
+
+    .figma-logo-sub {
+        font-size: 0.35rem;
+    }
+
+    .figma-logo-slogan {
+        font-size: 0.45rem;
+    }
+
+    /* Hero区块样式 */
+    .figma-hero {
+        padding-top: 10vh;
+        height: 60vh;
+    }
+
+    .figma-hero-bottom-bar {
+        padding: 0.6rem;
+        gap: 0.6rem;
+        min-height: auto;
+    }
+
+    .figma-hero-content {
+        padding: 0.5rem;
+    }
+
+    .figma-hero-title {
+        font-size: clamp(0.6rem, 4.0vw, 1.5rem);
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* 公司介绍区块样式 */
+    .figma-company-profile {
+        height: 80vh;
+        min-height: 599px;
+    }
+
+    .figma-company-profile-title {
+        font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+        width: 98%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .figma-company-profile-en {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        width: 98%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .figma-company-profile-bottom-bar {
+        min-height: 150px;
+        height: 45vw;
+    }
+
+    .figma-company-profile-philosophy-title {
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .figma-company-profile-philosophy-main {
+        font-size: clamp(0.8rem, 3vw, 1.1rem);
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    .figma-company-profile-philosophy-desc {
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        line-height: 1.3;
+    }
+
+    /* 关于我们区块样式 */
+    .figma-aboutus {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .figma-aboutus-bg {
+        background: url('/images/people_m.png') no-repeat center/cover;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .figma-aboutus-bar {
+        height: 30%;
+        min-height: 100px;
+    }
+
+    .figma-aboutus-content {
+        padding: 0.5rem;
+    }
+
+    .figma-aboutus-title {
+        font-size: clamp(0.8rem, 3vw, 1.1rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .figma-aboutus-en {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+        margin-bottom: 0.8rem;
+    }
+
+    .figma-aboutus-team-title {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .figma-aboutus-team-main {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+    }
+
+
+    .figma-contact-logo,
+    .figma-contact-info {
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .figma-contact-title,
+    .figma-contact-email {
+        font-size: 0.9rem;
+    }
+
+    .figma-contact-divider {
+        display: none;
+    }
+
+    .figma-contact-company,
+    .figma-contact-copyright {
+        font-size: 0.5rem;
+    }
+
+    /* 公司信息样式 */
+    .figma-company-info,
+    .figma-company-info-mcp {
+        width: 80%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .company-info-title,
+    .company-info-title-mcp {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .company-info-label,
+    .company-info-value,
+    .company-info-label-mcp,
+    .company-info-value-mcp {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+
+    .company-info-row,
+    .company-info-row-mcp {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .company-info-label,
+    .company-info-label-mcp {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .company-info-value,
+    .company-info-value-mcp {
+        padding-left: 0;
+        text-align: left;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    /* 业务内容页面样式 */
+    .cases-hero {
+        height: 60vh;
+    }
+
+    .cases-service-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .cases-service-titles {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .cases-service-desc {
+        font-size: clamp(0.6rem, 3vw, 1.2rem);
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+
+    /* 关于我们团队样式 */
+    .about-team-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .about-team-titles {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .about-team-desc {
+        font-size: clamp(0.6rem, 3vw, 1.2rem);
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Header样式已移动到Header.tsx组件中 */
+
+    /* nav-toggle样式已移动到Header.tsx组件中 */
+
+    /* Feature title响应式 */
+    .figma-hero-bottom-bar .feature-title {
+        font-size: 1.2rem !important;
+    }
+
+    /* Hero区块样式 */
+    .figma-hero-content {
+        padding: 0 1rem;
+    }
+
+    .figma-hero-bottom-bar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* 公司介绍区块样式 */
+    .figma-company-profile {
+        height: 80vh;
+        min-height: 500px;
+    }
+
+    .figma-company-profile-philosophy-content {
+        padding: 3rem 2rem;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .cases-service-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .cases-service-titles {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .cases-service-desc {
+        font-size: clamp(0.6rem, 3vw, 1.2rem);
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+
+    /* 关于我们区块样式 */
+    .figma-aboutus {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .figma-aboutus-bg {
+        background: url('/images/people_m.png') no-repeat center/cover;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .figma-aboutus-bar {
+        height: 30%;
+        min-height: 100px;
+    }
+
+    .figma-aboutus-content {
+        padding: 0.5rem;
+    }
+
+    .figma-aboutus-title {
+        font-size: clamp(0.8rem, 3vw, 1.1rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .figma-aboutus-en {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+        margin-bottom: 0.8rem;
+    }
+
+    .figma-aboutus-team-title {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .figma-aboutus-team-main {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+    }
+
+
+    .figma-contact-logo,
+    .figma-contact-info {
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .figma-contact-title,
+    .figma-contact-copyright {
+        margin-left: 0;
+    }
+
+    .figma-contact-divider {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .figma-contact-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .figma-contact-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    /* Footer样式 */
+    .figma-footer-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .footer-logo-block {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .footer-contact-block {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact-block .figma-contact-title,
+    .footer-contact-block .figma-contact-email,
+    .footer-contact-block .figma-contact-address {
+        text-align: center;
+    }
+
+    /* 业务内容页面样式 */
+    .cases-services-inner {
+        gap: 0;
+        padding: 0;
+    }
+
+    .cases-service-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 0;
+        min-height: unset;
+    }
+
+    .cases-service-img {
+        margin-right: 0;
+        margin-bottom: 1.2rem;
+        width: 90px;
+        height: 90px;
+    }
+
+    .cases-service-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cases-service-desc {
+        text-align: center;
+        margin-left: 0;
+        max-width: 100%;
+        min-width: unset;
+    }
+
+    .cases-service-titles {
+        align-items: center;
+    }
+
+    .cases-service-title {
+        font-size: 1.2rem;
+    }
+
+    /* 关于我们团队样式 */
+    .about-team-inner {
+        gap: 0;
+        padding: 0;
+    }
+
+    .about-team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 0;
+        min-height: unset;
+    }
+
+    .about-team-img {
+        margin-right: 0;
+        margin-bottom: 1.2rem;
+        width: 90px;
+        height: 90px;
+    }
+
+    .about-team-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-team-desc {
+        text-align: center;
+        margin-left: 0;
+        max-width: 100%;
+        min-width: unset;
+    }
+
+    .about-team-titles {
+        align-items: center;
+    }
+
+    .about-team-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* 邮件链接样式 */
+.email-link {
+    color: #007AFF;
+    text-decoration: underline;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.email-link:hover {
+    color: #0056CC;
+    opacity: 0.8;
+}
+
+.email-link:active {
+    color: #003D99;
+}
+
+/* 移动端邮件链接样式优化 */
+@media (max-width: 768px) {
+    .email-link {
+        color: #007AFF;
+        text-decoration: underline;
+        font-size: inherit;
+        /* 增加触摸目标大小 */
+        padding: 0.2em 0;
+        display: inline-block;
+        min-height: 44px;
+        line-height: 1.2;
+    }
+
+    .email-link:hover,
+    .email-link:focus {
+        color: #0056CC;
+        background-color: rgba(0, 122, 255, 0.1);
+        border-radius: 4px;
+    }
+}
+
+/* 地址链接样式 */
+.address-link {
+    color: #34C759;
+    text-decoration: underline;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.address-link:hover {
+    color: #248A3D;
+    opacity: 0.8;
+}
+
+.address-link:active {
+    color: #1D6B2F;
+}
+
+/* 移动端地址链接样式优化 */
+@media (max-width: 768px) {
+    .address-link {
+        color: #34C759;
+        text-decoration: underline;
+        font-size: inherit;
+        /* 增加触摸目标大小 */
+        padding: 0.2em 0;
+        display: inline-block;
+        min-height: 44px;
+        line-height: 1.2;
+    }
+
+    .address-link:hover,
+    .address-link:focus {
+        color: #248A3D;
+        background-color: rgba(52, 199, 89, 0.1);
+        border-radius: 4px;
+    }
+}
