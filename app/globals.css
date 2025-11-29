@@ -1078,7 +1078,9 @@ body {
     font-family: 'SF Pro', Arial, sans-serif;
     white-space: nowrap;
     padding: 0 0.5rem;
-    line-height: 1;
+    line-height: 2.5rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .figma-header-divider {
@@ -1893,4 +1895,202 @@ body {
         background-color: rgba(52, 199, 89, 0.1);
         border-radius: 4px;
     }
+}
+
+/* 产品链接按钮样式 */
+.product-link-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: #1a237e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'SF Pro', Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(26, 35, 126, 0.2);
+}
+
+.product-link-button:hover {
+    background: #34416e;
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    transform: translateY(-2px);
+}
+
+.product-link-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(26, 35, 126, 0.2);
+}
+
+@media (max-width: 768px) {
+    .product-link-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 导航下拉菜单样式 */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.nav-dropdown > a:hover {
+    opacity: 0.7;
+}
+
+.dropdown-arrow {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    min-width: 280px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    z-index: 1000;
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+/* 创建一个桥梁区域，连接导航项和下拉菜单 */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background: transparent;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    border-left: 3px solid transparent;
+    box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+    border-left-color: #1a237e;
+}
+
+.dropdown-item-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a237e;
+    margin-bottom: 0.2rem;
+    width: 100%;
+}
+
+.dropdown-item-desc {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    width: 100%;
+}
+
+/* 移动端下拉菜单样式 */
+.mobile-dropdown {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+.mobile-dropdown-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'SF Pro', Arial, sans-serif;
+    color: #333;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.mobile-dropdown-header:hover {
+    color: #1a237e;
+}
+
+.mobile-dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.mobile-dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1rem;
+}
+
+.mobile-dropdown-item {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    background: #f8f8f8;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.mobile-dropdown-item:hover {
+    background: #e8e8e8;
+}
+
+.mobile-dropdown-item-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a237e;
+    margin-bottom: 0.2rem;
+}
+
+.mobile-dropdown-item-desc {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.3;
 }

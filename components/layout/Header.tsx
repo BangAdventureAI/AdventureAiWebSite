@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Locale } from '@/types';
 import { getTranslation } from '@/lib/translations';
@@ -30,6 +30,43 @@ export default function Header({ locale, onLanguageChange }: HeaderProps) {
         };
     }, []);
 
+    const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+    const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLLIElement>(null);
+
+    const toggleProductsDropdown = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setProductsDropdownOpen(!productsDropdownOpen);
+    };
+
+    const toggleMobileProducts = () => {
+        setMobileProductsOpen(!mobileProductsOpen);
+    };
+
+    // 点击外部关闭下拉菜单
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setProductsDropdownOpen(false);
+            }
+        };
+
+        if (productsDropdownOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [productsDropdownOpen]);
+
+    // 当移动端菜单关闭时，重置产品下拉状态
+    useEffect(() => {
+        if (!isMobileMenuOpen) {
+            setMobileProductsOpen(false);
+        }
+    }, [isMobileMenuOpen]);
+
     const navItems = [
         { href: '/', label: getTranslation(locale, 'nav.home') },
         { href: '/company', label: getTranslation(locale, 'nav.company') },
@@ -37,8 +74,17 @@ export default function Header({ locale, onLanguageChange }: HeaderProps) {
         { href: '/about', label: getTranslation(locale, 'nav.about') },
     ];
 
+    const productItems = [
+        {
+            name: getTranslation(locale, 'products.fastreply.name'),
+            description: getTranslation(locale, 'products.fastreply.description'),
+            link: 'https://fastreply.jp/'
+        }
+    ];
+
     const handleNavClick = (href: string) => {
         setIsMobileMenuOpen(false);
+        setMobileProductsOpen(false);
 
         const newUrl = buildUrlWithLocale(href, locale);
         router.push(newUrl);
@@ -104,7 +150,45 @@ export default function Header({ locale, onLanguageChange }: HeaderProps) {
                     {/* Navigation menu */}
                     <nav>
                         <ul>
-                            {navItems.map((item) => (
+                            {navItems.slice(0, 3).map((item) => (
+                                <li key={item.href}>
+                                    <a
+                                        href="#"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleNavClick(item.href);
+                                        }}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                            <li
+                                className="nav-dropdown"
+                                ref={dropdownRef}
+                            >
+                                <a href="#" onClick={toggleProductsDropdown}>
+                                    {getTranslation(locale, 'nav.products')}
+                                    <span className={`dropdown-arrow ${productsDropdownOpen ? 'open' : ''}`}>▼</span>
+                                </a>
+                                {productsDropdownOpen && (
+                                    <div className="dropdown-menu">
+                                        {productItems.map((product, index) => (
+                                            <a
+                                                key={index}
+                                                href={product.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="dropdown-item"
+                                            >
+                                                <div className="dropdown-item-name">{product.name}</div>
+                                                <div className="dropdown-item-desc">{product.description}</div>
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                            </li>
+                            {navItems.slice(3).map((item) => (
                                 <li key={item.href}>
                                     <a
                                         href="#"
@@ -147,7 +231,46 @@ export default function Header({ locale, onLanguageChange }: HeaderProps) {
                         <div className="mobile-menu-content">
                             <nav className="mobile-nav">
                                 <ul>
-                                    {navItems.map((item) => (
+                                    {navItems.slice(0, 3).map((item) => (
+                                        <li key={item.href}>
+                                            <a
+                                                href="#"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    handleNavClick(item.href);
+                                                }}
+                                            >
+                                                {item.label}
+                                            </a>
+                                        </li>
+                                    ))}
+                                    <li className="mobile-dropdown">
+                                        <div
+                                            className="mobile-dropdown-header"
+                                            onClick={toggleMobileProducts}
+                                        >
+                                            {getTranslation(locale, 'nav.products')}
+                                            <span className={`mobile-dropdown-arrow ${mobileProductsOpen ? 'open' : ''}`}>▼</span>
+                                        </div>
+                                        {mobileProductsOpen && (
+                                            <div className="mobile-dropdown-items">
+                                                {productItems.map((product, index) => (
+                                                    <a
+                                                        key={index}
+                                                        href={product.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="mobile-dropdown-item"
+                                                        onClick={() => setIsMobileMenuOpen(false)}
+                                                    >
+                                                        <div className="mobile-dropdown-item-name">{product.name}</div>
+                                                        <div className="mobile-dropdown-item-desc">{product.description}</div>
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </li>
+                                    {navItems.slice(3).map((item) => (
                                         <li key={item.href}>
                                             <a
                                                 href="#"

@@ -6,6 +6,7 @@ export const translations = {
         'nav.home': 'ホーム',
         'nav.company': '会社紹介',
         'nav.cases': '事業内容',
+        'nav.products': '製品',
         'nav.about': '私たちについて',
 
         // Homepage
@@ -66,12 +67,21 @@ export const translations = {
         'company.profile.capital': '資本金',
         'company.profile.business': '事業内容',
         'company.profile.number': '会社法人番号',
+
+        // Products
+        'products.hero.title': '製品',
+        'products.hero.subtitle': 'Products',
+        'products.fastreply.name': 'FastReply',
+        'products.fastreply.tagline': 'AI搭載の面接支援ツール',
+        'products.fastreply.description': 'AI搭載の面接支援ツール',
+        'products.fastreply.link': '詳しく見る',
     },
     en: {
         // Navigation
         'nav.home': 'Home',
         'nav.company': 'Company',
         'nav.cases': 'Services',
+        'nav.products': 'Products',
         'nav.about': 'About Us',
 
         // Homepage
@@ -132,6 +142,14 @@ export const translations = {
         'company.profile.capital': 'Capital',
         'company.profile.business': 'Business Activities',
         'company.profile.number': 'Corporate Number',
+
+        // Products
+        'products.hero.title': 'Products',
+        'products.hero.subtitle': 'Products',
+        'products.fastreply.name': 'FastReply',
+        'products.fastreply.tagline': 'AI-Powered Interview Assistant',
+        'products.fastreply.description': 'AI-Powered Interview Assistant',
+        'products.fastreply.link': 'Learn More',
     },
 };
 
